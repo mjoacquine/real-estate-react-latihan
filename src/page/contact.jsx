@@ -1,3 +1,11 @@
-import { prefetchDNS } from "react-dom";
+import React from 'react'
 
-prefetchDNS
+function contact() {
+  return (
+    <div>
+      
+    </div>
+  )
+}
+
+export default contact

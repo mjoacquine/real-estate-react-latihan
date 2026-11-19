@@ -1,3 +1,11 @@
-import { prefetchDNS } from "react-dom";
+import React from 'react'
 
-prefetchDNS
+function login() {
+  return (
+    <div>
+      
+    </div>
+  )
+}
+
+export default login

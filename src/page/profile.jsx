@@ -1,3 +1,11 @@
-import { prefetchDNS } from "react-dom";
+import React from 'react'
 
-prefetchDNS
+function profile() {
+  return (
+    <div>
+      
+    </div>
+  )
+}
+
+export default profile

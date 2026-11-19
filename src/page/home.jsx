@@ -13,11 +13,13 @@ function Home() {
               <h1 className="display-4 fw-bold mb-3">
                 Perumahan Impian Semua Insan
               </h1>
+
               <p className="lead mb-4">
-                Temukan rumah idaman Anda dengan lokasi strategis, fasilitas
-                lengkap, dan harga terjangkau. Griya MDP hadir untuk
-                mewujudkan hunian impian keluarga Indonesia.
+                Temukan rumah idaman Anda dengan lokasi strategis,
+                fasilitas lengkap, dan harga terjangkau. Griya MDP
+                hadir untuk mewujudkan hunian impian keluarga Indonesia.
               </p>
+
               <div className="d-flex gap-3">
                 <a href="#properties" className="btn btn-light btn-lg">
                   <i className="bi bi-search me-2"></i>
@@ -58,10 +60,12 @@ function Home() {
                   <div className="bg-primary bg-opacity-10 rounded-circle d-inline-flex p-3 mb-3">
                     <i className="bi bi-geo-alt-fill text-primary fs-1"></i>
                   </div>
-                  <h5 className="card-title fw-bold">Lokasi Strategis</h5>
+                  <h5 className="card-title fw-bold">
+                    Lokasi Strategis
+                  </h5>
                   <p className="card-text text-muted">
-                    Dekat dengan pusat kota, sekolah, rumah sakit, dan
-                    fasilitas umum lainnya
+                    Dekat dengan pusat kota, sekolah, rumah sakit,
+                    dan fasilitas umum lainnya
                   </p>
                 </div>
               </div>
@@ -73,10 +77,12 @@ function Home() {
                   <div className="bg-success bg-opacity-10 rounded-circle d-inline-flex p-3 mb-3">
                     <i className="bi bi-shield-check text-success fs-1"></i>
                   </div>
-                  <h5 className="card-title fw-bold">Legalitas Lengkap</h5>
+                  <h5 className="card-title fw-bold">
+                    Legalitas Lengkap
+                  </h5>
                   <p className="card-text text-muted">
-                    Semua properti memiliki sertifikat lengkap dan terjamin
-                    keamanannya
+                    Semua properti memiliki sertifikat lengkap
+                    dan terjamin keamanannya
                   </p>
                 </div>
               </div>
@@ -88,10 +94,12 @@ function Home() {
                   <div className="bg-warning bg-opacity-10 rounded-circle d-inline-flex p-3 mb-3">
                     <i className="bi bi-cash-coin text-warning fs-2"></i>
                   </div>
-                  <h5 className="card-title fw-bold">Harga Terjangkau</h5>
+                  <h5 className="card-title fw-bold">
+                    Harga Terjangkau
+                  </h5>
                   <p className="card-text text-muted">
-                    Berbagai pilihan dengan skema pembayaran yang fleksibel
-                    dan kompetitif
+                    Berbagai pilihan dengan skema pembayaran
+                    yang fleksibel dan kompetitif
                   </p>
                 </div>
               </div>
@@ -108,25 +116,28 @@ function Home() {
               <h2 className="fw-bold mb-3">
                 Pilihan Hunian Terbaik
               </h2>
+
               <p className="text-muted mb-4">
-                Jelajahi berbagai pilihan properti berkualitas dengan
-                fasilitas modern
+                Jelajahi berbagai pilihan properti berkualitas
+                dengan fasilitas modern
               </p>
 
-              {/* Filter Buttons */}
               <div className="d-flex justify-content-center gap-3 mb-4 flex-wrap">
                 <button className="btn btn-outline-primary active">
                   <i className="bi bi-grid-3x3-gap me-2"></i>
                   Semua
                 </button>
+
                 <button className="btn btn-outline-primary">
                   <i className="bi bi-house me-2"></i>
                   Rumah
                 </button>
+
                 <button className="btn btn-outline-primary">
                   <i className="bi bi-building me-2"></i>
                   Apartemen
                 </button>
+
                 <button className="btn btn-outline-primary">
                   <i className="bi bi-tree me-2"></i>
                   Villa
@@ -135,16 +146,63 @@ function Home() {
             </div>
           </div>
 
-          {/* Housing Cards Grid */}
+          {/* Housing Cards */}
           <div className="row g-4 mb-4">
-            {housingList.map((housing) => (
-              <div className="col-md-6 col-lg-4" key={housing.id}>
-                <LokasiPerumahan data={housing} />
+            <div className="col-md-6 col-lg-4">
+              <div className="card border-0 shadow-sm h-100">
+                <img
+                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600"
+                  className="card-img-top"
+                  alt="Rumah Modern"
+                />
+                <div className="card-body">
+                  <h5 className="card-title fw-bold">
+                    Rumah Modern
+                  </h5>
+                  <p className="card-text text-muted">
+                    Hunian nyaman dengan desain modern dan lokasi strategis.
+                  </p>
+                </div>
               </div>
-            ))}
+            </div>
+
+            <div className="col-md-6 col-lg-4">
+              <div className="card border-0 shadow-sm h-100">
+                <img
+                  src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600"
+                  className="card-img-top"
+                  alt="Rumah Minimalis"
+                />
+                <div className="card-body">
+                  <h5 className="card-title fw-bold">
+                    Rumah Minimalis
+                  </h5>
+                  <p className="card-text text-muted">
+                    Rumah minimalis dengan fasilitas lengkap untuk keluarga.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-md-6 col-lg-4">
+              <div className="card border-0 shadow-sm h-100">
+                <img
+                  src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600"
+                  className="card-img-top"
+                  alt="Villa Modern"
+                />
+                <div className="card-body">
+                  <h5 className="card-title fw-bold">
+                    Villa Modern
+                  </h5>
+                  <p className="card-text text-muted">
+                    Hunian eksklusif dengan suasana nyaman dan asri.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Load More Button */}
           <div className="row">
             <div className="col-12 text-center">
               <button className="btn btn-primary btn-lg">
@@ -164,6 +222,7 @@ function Home() {
               <h3 className="fw-bold mb-2">
                 Siap Menemukan Rumah Impian Anda?
               </h3>
+
               <p className="mb-0">
                 Hubungi kami sekarang dan dapatkan penawaran terbaik
                 untuk properti pilihan Anda

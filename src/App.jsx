@@ -1,23 +1,20 @@
-
 import React from "react";
 import { Routes, Route, NavLink } from "react-router-dom";
-
-// Import halaman
-import Home from "./page/home";
-import Profile from "./page/profile";
-import Login from "./page/login";
-import Register from "./page/register";
-import Contact from "./page/contact";
+import Home from "./pages/Home/Home.jsx";
+import Profile from "./pages/Profile/Profile.jsx";
+import Login from "./pages/Login/Login.jsx";
+import Register from "./pages/Register/Register.jsx";
+import Contact from "./pages/Contact/Contact.jsx";
 
 function App() {
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <>
+      {/* Komponen NavBar */}
+      <nav className="navbar navbar-expand-lg navbar-light bg-light border-bottom">
         <div className="container-fluid">
-          <NavLink className="navbar-brand" to="/">
+          <NavLink className="navbar-brand fw-bold" to="/">
             Griya MDP
           </NavLink>
-
           <button
             className="navbar-toggler"
             type="button"
@@ -29,62 +26,44 @@ function App() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-
-          <div
-            className="collapse navbar-collapse"
-            id="navbarSupportedContent"
-          >
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <NavLink
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
+                  className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
                   to="/"
                   end
                 >
                   Home
                 </NavLink>
               </li>
-
               <li className="nav-item">
                 <NavLink
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
+                  className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
                   to="/profile"
                 >
                   Profile
                 </NavLink>
               </li>
-
               <li className="nav-item">
                 <NavLink
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
+                  className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
                   to="/login"
                 >
                   Login
                 </NavLink>
               </li>
-
               <li className="nav-item">
                 <NavLink
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
+                  className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
                   to="/register"
                 >
                   Register
                 </NavLink>
               </li>
-
               <li className="nav-item">
                 <NavLink
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
+                  className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
                   to="/contact"
                 >
                   Contact
@@ -95,7 +74,8 @@ function App() {
         </div>
       </nav>
 
-      <div>
+      {/* Router */}
+      <div className="container mt-4">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
@@ -104,7 +84,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
-    </div>
+    </>
   );
 }
 

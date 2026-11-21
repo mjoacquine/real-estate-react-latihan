@@ -1,18 +1,21 @@
-{/* Features Section */}
+
+import React from 'react'
+
+function Features() {
+  return (
+    <div>
       <section className="features-section py-5 bg-light">
         <div className="container">
           <div className="row text-center mb-5">
             <div className="col-lg-12">
-              <h2 className="fw-bold mb-3">
-                Mengapa Memilih Griya MDP?
-              </h2>
+              <h2 className="fw-bold mb-3">Mengapa Memilih Griya MDP?</h2>
               <p className="text-muted">
                 Kami memberikan yang terbaik untuk hunian impian Anda
               </p>
             </div>
           </div>
-
           <div className="row g-4">
+            {/* Feature Card 1 */}
             <div className="col-md-4">
               <div className="card border-0 shadow-sm h-100 text-center p-4">
                 <div className="card-body">
@@ -21,13 +24,13 @@
                   </div>
                   <h5 className="card-title fw-bold">Lokasi Strategis</h5>
                   <p className="card-text text-muted">
-                    Dekat dengan pusat kota, sekolah, rumah sakit, dan
-                    fasilitas umum lainnya
+                    Dekat dengan pusat kota, sekolah, rumah sakit, dan fasilitas
+                    umum lainnya
                   </p>
                 </div>
               </div>
             </div>
-
+            {/* Feature Card 2 */}
             <div className="col-md-4">
               <div className="card border-0 shadow-sm h-100 text-center p-4">
                 <div className="card-body">
@@ -42,7 +45,7 @@
                 </div>
               </div>
             </div>
-
+            {/* Feature Card 3 */}
             <div className="col-md-4">
               <div className="card border-0 shadow-sm h-100 text-center p-4">
                 <div className="card-body">
@@ -51,8 +54,8 @@
                   </div>
                   <h5 className="card-title fw-bold">Harga Terjangkau</h5>
                   <p className="card-text text-muted">
-                    Berbagai pilihan dengan skema pembayaran yang fleksibel
-                    dan kompetitif
+                    Berbagai pilihan dengan skema pembayaran yang fleksibel dan
+                    kompetitif
                   </p>
                 </div>
               </div>
@@ -60,3 +63,8 @@
           </div>
         </div>
       </section>
+    </div>
+  )
+}
+
+export default Features

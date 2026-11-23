@@ -1,10 +1,10 @@
 import React from "react";
 import { Routes, Route, NavLink } from "react-router-dom";
-import Home from "./pages/Home/Home.jsx";
-import Profile from "./pages/Profile/Profile.jsx";
-import Login from "./pages/Login/Login.jsx";
-import Register from "./pages/Register/Register.jsx";
-import Contact from "./pages/Contact/Contact.jsx";
+import Home from "./page/home.jsx";
+import Profile from "./page/profile.jsx";
+import Login from "./page/login.jsx";
+import Register from "./page/register.jsx";
+import Contact from "./page/contact.jsx";
 
 function App() {
   return (

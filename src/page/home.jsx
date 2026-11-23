@@ -1,10 +1,9 @@
-import Features from "../../components/Features";
-import Properties from "../../components/Properties";
-import Hero from "../../components/Hero";
-import CTA from "../../components/CTA";
+import Features from "../components/Features";
+import Properties from "../components/Properties";
+import Hero from "../components/Hero";
+import CTA from "../components/CTA";
 
 function Home() {
-  // Array untuk data perumahan (bisa diisi dari backend nanti)
   const housingList = [
     {
       id: 1,
@@ -49,16 +48,9 @@ function Home() {
 
   return (
     <>
-      {/* Hero Section */}
       <Hero />
-
-      {/* Features Section */}
       <Features />
-
-      {/* Properties Section */}
       <Properties housingList={housingList} />
-
-      {/* CTA Section */}
       <CTA />
     </>
   );

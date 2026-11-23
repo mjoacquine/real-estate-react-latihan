@@ -7,8 +7,10 @@ function Register() {
     name: "",
     email: "",
     phone: "",
+    preferredCity: "Kota Palembang",
     password: "",
   });
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,12 +19,18 @@ function Register() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (formData.password.length < 6) {
+      setErrorMsg("Kata sandi minimal terdiri dari 6 karakter.");
+      return;
+    }
+    setErrorMsg("");
     localStorage.setItem(
       "griyaMdpUser",
       JSON.stringify({
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
+        preferredCity: formData.preferredCity,
       })
     );
     navigate("/profile");
@@ -32,14 +40,28 @@ function Register() {
     <div className="row justify-content-center py-4">
       <div className="col-md-6 col-lg-5">
         <div className="card border-0 shadow-sm p-4">
-          <h2 className="fw-bold mb-2 text-center">Daftar Akun</h2>
-          <p className="text-muted small text-center mb-4">
-            Buat akun Griya MDP untuk mulai mencari hunian impian
-          </p>
+          <div className="text-center mb-4">
+            <span className="badge bg-primary bg-opacity-10 text-primary mb-2 px-3 py-2">
+              <i className="bi bi-house-add-fill me-1"></i> Griya MDP
+            </span>
+            <h2 className="fw-bold mb-1">Buat Akun Baru</h2>
+            <p className="text-muted small mb-0">
+              Mulai temukan hunian strategis & terjangkau untuk keluarga Anda
+            </p>
+          </div>
+
+          {errorMsg && (
+            <div className="alert alert-danger py-2 small" role="alert">
+              {errorMsg}
+            </div>
+          )}
 
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
-              <label htmlFor="registerName" className="form-label">
+              <label
+                htmlFor="registerName"
+                className="form-label small fw-semibold"
+              >
                 Nama Lengkap
               </label>
               <input
@@ -55,7 +77,10 @@ function Register() {
             </div>
 
             <div className="mb-3">
-              <label htmlFor="registerEmail" className="form-label">
+              <label
+                htmlFor="registerEmail"
+                className="form-label small fw-semibold"
+              >
                 Email
               </label>
               <input
@@ -70,25 +95,50 @@ function Register() {
               />
             </div>
 
-            <div className="mb-3">
-              <label htmlFor="registerPhone" className="form-label">
-                No. WhatsApp / Telepon
-              </label>
-              <input
-                id="registerPhone"
-                type="tel"
-                name="phone"
-                className="form-control"
-                placeholder="08xxxxxxxxxx"
-                value={formData.phone}
-                onChange={handleChange}
-                required
-              />
+            <div className="row g-2 mb-3">
+              <div className="col-sm-6">
+                <label
+                  htmlFor="registerPhone"
+                  className="form-label small fw-semibold"
+                >
+                  No. WhatsApp
+                </label>
+                <input
+                  id="registerPhone"
+                  type="tel"
+                  name="phone"
+                  className="form-control"
+                  placeholder="08xxxxxxxxxx"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <div className="col-sm-6">
+                <label
+                  htmlFor="registerCity"
+                  className="form-label small fw-semibold"
+                >
+                  Lokasi Hunian Minat
+                </label>
+                <input
+                  id="registerCity"
+                  type="text"
+                  name="preferredCity"
+                  className="form-control"
+                  value={formData.preferredCity}
+                  onChange={handleChange}
+                />
+              </div>
             </div>
 
-            <div className="mb-3">
-              <label htmlFor="registerPassword" className="form-label">
-                Password
+            <div className="mb-4">
+              <label
+                htmlFor="registerPassword"
+                className="form-label small fw-semibold"
+              >
+                Kata Sandi
               </label>
               <input
                 id="registerPassword"
@@ -102,13 +152,19 @@ function Register() {
               />
             </div>
 
-            <button type="submit" className="btn btn-primary w-100 py-2">
-              Register
+            <button
+              type="submit"
+              className="btn btn-primary w-100 py-2 fw-semibold"
+            >
+              <i className="bi bi-check-circle me-2"></i>Daftar Sekarang
             </button>
           </form>
 
-          <p className="text-muted small text-center mt-3 mb-0">
-            Sudah punya akun? <Link to="/login">Masuk di sini</Link>
+          <p className="text-muted small text-center mt-4 mb-0">
+            Sudah punya akun?{" "}
+            <Link to="/login" className="fw-semibold text-decoration-none">
+              Masuk di sini
+            </Link>
           </p>
         </div>
       </div>
